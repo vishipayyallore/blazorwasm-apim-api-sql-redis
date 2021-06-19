@@ -35,4 +35,5 @@ jobs:
       - uses: actions/upload-artifact@v2
         with:
           name: publish BooksDataStore dacpac
-          path: ${{ github.workspace }}/bin/Release/  
+          path: /bin/Release/  
+          working-directory: ./source/BooksDataStore
