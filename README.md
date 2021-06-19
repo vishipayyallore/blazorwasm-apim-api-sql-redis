@@ -1,5 +1,5 @@
 # N-Tier Full Stack Application in Azure
-Full Stack Application using Blazor WASM, Auth0, APIM, Web API, Dapper, Azure SQL Server, and Redis
+
 
 ---
 ## Build Status (WORK IN PROGRESS)
@@ -11,6 +11,20 @@ Full Stack Application using Blazor WASM, Auth0, APIM, Web API, Dapper, Azure SQ
 ## Application Architecture Diagram
 
 ![Application Architecture](./documentation/images/ApplicationArchitecture.PNG "N-Tier Full Stack Application in Azure")
+
+---
+
+## Technologies Used
+
+1. Blazor WASM, 
+1. Auth0, 
+1. APIM, 
+1. Web API
+1. Key Valut
+1. Dapper 
+1. Azure SQL Server 
+1. Redis
+1. Application Insights
 
 ---
 ## Topic 1
