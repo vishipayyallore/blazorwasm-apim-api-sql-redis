@@ -20,9 +20,49 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "deploy", "deploy", "{68B69E
 		deploy\A.txt = deploy\A.txt
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "documentation", "documentation", "{B00F57C7-A521-4B8D-B40D-D9B1887D5A78}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "images", "images", "{46FCAE0F-C095-4599-96BD-02F84D7A3A01}"
+	ProjectSection(SolutionItems) = preProject
+		documentation\images\ApplicationArchitecture.PNG = documentation\images\ApplicationArchitecture.PNG
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "starter", "starter", "{D8708459-8F0E-4510-BDF2-D0A93BCF2643}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "infrastructure", "infrastructure", "{8A8A20CB-9B4C-41EC-841C-F68AAFD6D5CD}"
+	ProjectSection(SolutionItems) = preProject
+		infrastructure\A.txt = infrastructure\A.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "source", "source", "{A3527544-323E-4CE9-AE27-7AF8B207F8E7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{BCF4BDA0-1C18-4543-AE66-5991385A3CFD}"
+	ProjectSection(SolutionItems) = preProject
+		tests\A.txt = tests\A.txt
+	EndProjectSection
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "BooksDataStore", "source\BooksDataStore\BooksDataStore.sqlproj", "{D9BBD126-6AD1-4BE8-8535-064C59063EA6}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D9BBD126-6AD1-4BE8-8535-064C59063EA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9BBD126-6AD1-4BE8-8535-064C59063EA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9BBD126-6AD1-4BE8-8535-064C59063EA6}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{D9BBD126-6AD1-4BE8-8535-064C59063EA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9BBD126-6AD1-4BE8-8535-064C59063EA6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D9BBD126-6AD1-4BE8-8535-064C59063EA6}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{46FCAE0F-C095-4599-96BD-02F84D7A3A01} = {B00F57C7-A521-4B8D-B40D-D9B1887D5A78}
+		{D8708459-8F0E-4510-BDF2-D0A93BCF2643} = {B00F57C7-A521-4B8D-B40D-D9B1887D5A78}
+		{D9BBD126-6AD1-4BE8-8535-064C59063EA6} = {A3527544-323E-4CE9-AE27-7AF8B207F8E7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6E90C2F0-E8FE-4B4E-8644-A12F2DEAA3F5}
