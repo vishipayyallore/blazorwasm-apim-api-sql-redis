@@ -32,8 +32,7 @@ jobs:
         working-directory: ./source/BooksDataStore
 
       # Publish an artifact
-      - name: publish dacpac
       - uses: actions/upload-artifact@v2
         with:
-          name: BooksAzureSQLDB
+          name: publish BooksDataStore dacpac
           path: ${{ github.workspace }}/bin/Release/  
