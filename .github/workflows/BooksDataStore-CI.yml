@@ -29,10 +29,3 @@ jobs:
       - name: create dacpac
         run: |
           & 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\MSBuild\Current\Bin\msbuild.exe' kcdemodbproject.sqlproj /p:Configuration=Release
-
-      # Publish an artifact
-      - name: publish dacpac
-      - uses: actions/upload-artifact@v2
-        with:
-          name: AzureSQLDB
-          path: ${{ github.workspace }}/bin/Release/  
