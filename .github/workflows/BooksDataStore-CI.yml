@@ -28,4 +28,5 @@ jobs:
       # create dacpac using MSBUILD executable
       - name: create dacpac
         run: |
-          & 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\MSBuild\Current\Bin\msbuild.exe' kcdemodbproject.sqlproj /p:Configuration=Release
+          & 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\MSBuild\Current\Bin\msbuild.exe' BooksDataStore.sqlproj /p:Configuration=Release
+        working-directory: ./source/BooksDataStore
