@@ -40,4 +40,3 @@ jobs:
       with:
         name: Books.API
         path: ${{ github.workspace }}/source/Books.API/publish/
-
