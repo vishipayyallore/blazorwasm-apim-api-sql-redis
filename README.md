@@ -7,6 +7,9 @@
 #### Data Store .sqlproj
 [![.github/workflows/BooksDataStore-CI.yml](https://github.com/vishipayyallore/blazorwasm-apim-api-sql-redis/actions/workflows/BooksDataStore-CI.yml/badge.svg)](https://github.com/vishipayyallore/blazorwasm-apim-api-sql-redis/actions/workflows/BooksDataStore-CI.yml)
 
+#### Books Web API
+[![Books.API](https://github.com/vishipayyallore/blazorwasm-apim-api-sql-redis/actions/workflows/Books.API%20CI.yml/badge.svg)](https://github.com/vishipayyallore/blazorwasm-apim-api-sql-redis/actions/workflows/Books.API%20CI.yml)
+
 ---
 ## Application Architecture Diagram
 
