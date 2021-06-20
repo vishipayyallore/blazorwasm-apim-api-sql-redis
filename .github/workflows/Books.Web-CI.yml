@@ -35,8 +35,8 @@ jobs:
       run: dotnet publish -c Release -o ./publish
       working-directory: ./source/Books.Web
       
-    # Publish an artifact
+    # Upload an artifact to drop location
     - uses: actions/upload-artifact@v2
       with:
         name: Books.Web
-        path: ${{ github.workspace }}./source/Books.Web/publish
+        path: ${{ github.workspace }}./source/Books.Web/publish/

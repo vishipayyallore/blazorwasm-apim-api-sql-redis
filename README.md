@@ -5,7 +5,7 @@
 | Project      | Build Status |  Project      | Build Status |   Project      | Build Status | 
 | :---        |    :----:   |  :---        |    :----:   |   :---        |    :----:   | 
 | Data Store .sqlproj      | [![.github/workflows/BooksDataStore-CI.yml](https://github.com/vishipayyallore/blazorwasm-apim-api-sql-redis/actions/workflows/BooksDataStore-CI.yml/badge.svg)](https://github.com/vishipayyallore/blazorwasm-apim-api-sql-redis/actions/workflows/BooksDataStore-CI.yml)       | Books Web API   | [![Books.API](https://github.com/vishipayyallore/blazorwasm-apim-api-sql-redis/actions/workflows/Books.API-CI.yml/badge.svg)](https://github.com/vishipayyallore/blazorwasm-apim-api-sql-redis/actions/workflows/Books.API-CI.yml)     |  Books Web App   | [![Books.Web Blazor WASM](https://github.com/vishipayyallore/blazorwasm-apim-api-sql-redis/actions/workflows/Books.Web-CI.yml/badge.svg)](https://github.com/vishipayyallore/blazorwasm-apim-api-sql-redis/actions/workflows/Books.Web-CI.yml)        | 
-|     .    |    .   |       .  |    .   |       .    |    .   | 
+|         |       |         |       |          |       | 
 ---
 ## Application Architecture Diagram
 

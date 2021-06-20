@@ -32,12 +32,12 @@ jobs:
       working-directory: ./source/Books.API
 
     - name: dotnet publish
-      run: dotnet publish -c Release -o ./source/Books.APII/bin/Release/
+      run: dotnet publish -c Release -o ./publish
       working-directory: ./source/Books.API
       
-    # Publish an artifact
+    # Upload an artifact to drop location
     - uses: actions/upload-artifact@v2
       with:
         name: Books.API
-        path: ${{ github.workspace }}/source/Books.API/bin/Release/   
+        path: ${{ github.workspace }}/source/Books.API/publish/
 
