@@ -28,16 +28,23 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "source", "source", "{A35275
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{BCF4BDA0-1C18-4543-AE66-5991385A3CFD}"
 	ProjectSection(SolutionItems) = preProject
-		tests\A.txt = tests\A.txt
+		tests\ToBeDone.txt = tests\ToBeDone.txt
 	EndProjectSection
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "BooksDataStore", "source\BooksDataStore\BooksDataStore.sqlproj", "{D9BBD126-6AD1-4BE8-8535-064C59063EA6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Books.Data", "source\Books.Data\Books.Data.csproj", "{0043ACAF-339F-458A-968E-E38155404924}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Books.Data", "source\Books.Data\Books.Data.csproj", "{0043ACAF-339F-458A-968E-E38155404924}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Books.API", "source\Books.API\Books.API.csproj", "{3B534083-4FFC-41B0-BCD7-297B68ABDFDF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Books.API", "source\Books.API\Books.API.csproj", "{3B534083-4FFC-41B0-BCD7-297B68ABDFDF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Books.Web", "source\Books.Web\Books.Web.csproj", "{33ADDF3B-7B80-4368-847A-3B71B4342E9D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Books.Web", "source\Books.Web\Books.Web.csproj", "{33ADDF3B-7B80-4368-847A-3B71B4342E9D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{C3FAE9AC-A15C-4EA6-B678-5309A47996A4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{ECEECE7D-6240-4867-94D6-B9AD96C69221}"
+	ProjectSection(SolutionItems) = preProject
+		.github\workflows\BooksDataStore-CI.yml = .github\workflows\BooksDataStore-CI.yml
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -74,6 +81,7 @@ Global
 		{0043ACAF-339F-458A-968E-E38155404924} = {A3527544-323E-4CE9-AE27-7AF8B207F8E7}
 		{3B534083-4FFC-41B0-BCD7-297B68ABDFDF} = {A3527544-323E-4CE9-AE27-7AF8B207F8E7}
 		{33ADDF3B-7B80-4368-847A-3B71B4342E9D} = {A3527544-323E-4CE9-AE27-7AF8B207F8E7}
+		{ECEECE7D-6240-4867-94D6-B9AD96C69221} = {C3FAE9AC-A15C-4EA6-B678-5309A47996A4}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6E90C2F0-E8FE-4B4E-8644-A12F2DEAA3F5}
