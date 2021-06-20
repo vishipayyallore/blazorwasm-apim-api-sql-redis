@@ -4,11 +4,11 @@
 ---
 ## Build Status (WORK IN PROGRESS)
 
-#### Data Store .sqlproj
-[![.github/workflows/BooksDataStore-CI.yml](https://github.com/vishipayyallore/blazorwasm-apim-api-sql-redis/actions/workflows/BooksDataStore-CI.yml/badge.svg)](https://github.com/vishipayyallore/blazorwasm-apim-api-sql-redis/actions/workflows/BooksDataStore-CI.yml)
-
-#### Books Web API
-[![Books.API](https://github.com/vishipayyallore/blazorwasm-apim-api-sql-redis/actions/workflows/Books.API%20CI.yml/badge.svg)](https://github.com/vishipayyallore/blazorwasm-apim-api-sql-redis/actions/workflows/Books.API%20CI.yml)
+| Project      | Build Status | 
+| :---        |    :----:   | 
+| Data Store .sqlproj      | [![.github/workflows/BooksDataStore-CI.yml](https://github.com/vishipayyallore/blazorwasm-apim-api-sql-redis/actions/workflows/BooksDataStore-CI.yml/badge.svg)](https://github.com/vishipayyallore/blazorwasm-apim-api-sql-redis/actions/workflows/BooksDataStore-CI.yml)       | 
+| Books Web API   | [![Books.API](https://github.com/vishipayyallore/blazorwasm-apim-api-sql-redis/actions/workflows/Books.API%20CI.yml/badge.svg)](https://github.com/vishipayyallore/blazorwasm-apim-api-sql-redis/actions/workflows/Books.API%20CI.yml)        | 
+| Books Web App   | To Be Done        | 
 
 ---
 ## Application Architecture Diagram
