@@ -32,7 +32,7 @@ jobs:
       working-directory: ./source/Books.Web
 
     - name: dotnet publish
-      run: dotnet publish -c Release -o ./source/Books.Web/publish
+      run: dotnet publish -c Release -o ./publish
       working-directory: ./source/Books.Web
       
     # Publish an artifact
