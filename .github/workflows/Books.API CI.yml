@@ -13,16 +13,23 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Setup .NET
+    
+    - name: Build and Test Books API
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 5.0.x
+    
     - name: Restore dependencies
       run: dotnet restore
       working-directory: ./source/Books.API
+    
     - name: Build
       run: dotnet build --no-restore
       working-directory: ./source/Books.API
+    
     - name: Test
       run: dotnet test --no-build --verbosity normal
-      working-directory: ./source/Books.API
+      working-directory: ./source/Books.API.
+      
+   
+
