@@ -30,6 +30,10 @@ jobs:
     - name: Test
       run: dotnet test --no-build --verbosity normal
       working-directory: ./source/Books.API
+
+    - name: dotnet publish
+      run: dotnet publish -c Release -o ./source/Books.APII/bin/Release/
+      working-directory: ./source/Books.API
       
     # Publish an artifact
     - uses: actions/upload-artifact@v2
