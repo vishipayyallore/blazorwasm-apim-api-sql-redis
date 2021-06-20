@@ -31,5 +31,9 @@ jobs:
       run: dotnet test --no-build --verbosity normal
       working-directory: ./source/Books.API
       
-   
+    # Publish an artifact
+    - uses: actions/upload-artifact@v2
+      with:
+        name: Books.API
+        path: ${{ github.workspace }}/source/Books.API/bin/Release/   
 
