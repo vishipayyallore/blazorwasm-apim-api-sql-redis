@@ -1,4 +1,4 @@
-name: Books.Web Blazor WASM
+name: Books.Web
 
 on:
   push:
@@ -13,7 +13,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Build and Test Books.Web Blazor WASM
+    - name: Build and Test Books Web Blazor WASM
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 5.0.x
