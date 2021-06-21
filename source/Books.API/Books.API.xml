@@ -4,5 +4,22 @@
         <name>Books.API</name>
     </assembly>
     <members>
+        <member name="T:Books.API.Controllers.WeatherForecastController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Books.API.Controllers.WeatherForecastController.#ctor(Microsoft.Extensions.Logging.ILogger{Books.API.Controllers.WeatherForecastController})">
+            <summary>
+            
+            </summary>
+            <param name="logger"></param>
+        </member>
+        <member name="M:Books.API.Controllers.WeatherForecastController.Get">
+            <summary>
+            Retrieves the Weather Information
+            </summary>
+            <returns></returns>
+        </member>
     </members>
 </doc>
