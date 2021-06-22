@@ -26,6 +26,11 @@ namespace Books.API.Controllers
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
         }
 
+        /// <summary>
+        /// Add a Book to the Books Table
+        /// </summary>
+        /// <param name="book"></param>
+        /// <returns></returns>
         [HttpPost]
         public async Task<ActionResult<bool>> Post([FromBody] Book book)
         {
@@ -34,6 +39,10 @@ namespace Books.API.Controllers
                             .ConfigureAwait(false);
         }
 
+        /// <summary>
+        /// Retrieves all the books available
+        /// </summary>
+        /// <returns>Collection of Books</returns>
         [HttpGet]
         [ProducesResponseType(typeof(IEnumerable<Book>), (int)HttpStatusCode.OK)]
         public async Task<ActionResult<IEnumerable<Book>>> Get()
@@ -47,6 +56,11 @@ namespace Books.API.Controllers
             return Ok(books);
         }
 
+        /// <summary>
+        /// Retireve a single book with the given Id.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpGet("{id}")]
         [ProducesResponseType((int)HttpStatusCode.NotFound)]
         [ProducesResponseType(typeof(Book), (int)HttpStatusCode.OK)]

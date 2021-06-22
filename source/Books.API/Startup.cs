@@ -6,6 +6,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
+using System;
+using System.IO;
 
 namespace Books.API
 {
@@ -14,6 +16,7 @@ namespace Books.API
 
         public IConfiguration Configuration { get; }
         const string _corsPolicyName = "AllHosts";
+        const string _xmlCommentsFileName = "Books.API.xml";
 
         public Startup(IConfiguration configuration)
         {
@@ -35,6 +38,10 @@ namespace Books.API
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Books.API", Version = "v1" });
+
+                var filePath = Path.Combine(AppContext.BaseDirectory, _xmlCommentsFileName);
+
+                c.IncludeXmlComments(filePath);
             });
 
             // Configuration["ConnectionStrings:SqlServerConnection"]

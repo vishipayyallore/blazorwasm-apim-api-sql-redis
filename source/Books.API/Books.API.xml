@@ -6,9 +6,22 @@
     <members>
         <member name="M:Books.API.Controllers.BooksController.Post(Books.Data.Book)">
             <summary>
-            Retrieves all available books
+            Add a Book to the Books Table
             </summary>
             <param name="book"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Books.API.Controllers.BooksController.Get">
+            <summary>
+            Retrieves all the books available
+            </summary>
+            <returns>Collection of Books</returns>
+        </member>
+        <member name="M:Books.API.Controllers.BooksController.Get(System.Int32)">
+            <summary>
+            Retireve a single book with the given Id.
+            </summary>
+            <param name="id"></param>
             <returns></returns>
         </member>
     </members>
