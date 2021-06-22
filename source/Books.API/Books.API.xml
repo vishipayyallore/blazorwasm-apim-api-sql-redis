@@ -4,21 +4,11 @@
         <name>Books.API</name>
     </assembly>
     <members>
-        <member name="T:Books.API.Controllers.WeatherForecastController">
+        <member name="M:Books.API.Controllers.BooksController.Post(Books.Data.Book)">
             <summary>
-            
+            Retrieves all available books
             </summary>
-        </member>
-        <member name="M:Books.API.Controllers.WeatherForecastController.#ctor(Microsoft.Extensions.Logging.ILogger{Books.API.Controllers.WeatherForecastController})">
-            <summary>
-            
-            </summary>
-            <param name="logger"></param>
-        </member>
-        <member name="M:Books.API.Controllers.WeatherForecastController.Get">
-            <summary>
-            Retrieves the Weather Information
-            </summary>
+            <param name="book"></param>
             <returns></returns>
         </member>
     </members>

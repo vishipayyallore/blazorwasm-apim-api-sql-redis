@@ -1,37 +1,48 @@
+using Books.API.Configuration;
+using Books.API.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Books.API
 {
     public class Startup
     {
+
+        public IConfiguration Configuration { get; }
+        const string _corsPolicyName = "AllHosts";
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
         }
 
-        public IConfiguration Configuration { get; }
-
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors(options =>
+            {
+                options.AddPolicy(_corsPolicyName, builder => builder.AllowAnyOrigin()
+                                                            .AllowAnyHeader()
+                                                             .AllowAnyMethod());
+            });
 
             services.AddControllers();
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Books.API", Version = "v1" });
             });
+
+            // Configuration["ConnectionStrings:SqlServerConnection"]
+            // SQL database connection (name defined in appsettings.json).
+            var settingsData = new SettingsData(Configuration.GetConnectionString("SqlServerConnection"));
+            services.AddSingleton(settingsData);
+
+            services.AddScoped<IBookRepository, BookRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -47,6 +58,8 @@ namespace Books.API
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseCors(_corsPolicyName);
 
             app.UseAuthorization();
 
