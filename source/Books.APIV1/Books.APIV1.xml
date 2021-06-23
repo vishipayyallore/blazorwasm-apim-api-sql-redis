@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Books.APIV1</name>
+    </assembly>
+    <members>
+        <member name="M:Books.APIV1.Controllers.BooksController.Post(Books.DataV1.Book)">
+            <summary>
+            Add a Book to the Books Table
+            </summary>
+            <param name="book"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Books.APIV1.Controllers.BooksController.Get">
+            <summary>
+            Retrieves all the books available
+            </summary>
+            <returns>Collection of Books</returns>
+        </member>
+        <member name="M:Books.APIV1.Controllers.BooksController.Get(System.Int32)">
+            <summary>
+            Retireve a single book with the given Id.
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
