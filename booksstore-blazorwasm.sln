@@ -48,6 +48,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{
 		.github\workflows\BooksDataStore-CI.yml = .github\workflows\BooksDataStore-CI.yml
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Books.DataV1", "source\Books.DataV1\Books.DataV1.csproj", "{274410E9-FF30-43BF-BF90-F8ED31AD7D36}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -72,6 +74,10 @@ Global
 		{33ADDF3B-7B80-4368-847A-3B71B4342E9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{33ADDF3B-7B80-4368-847A-3B71B4342E9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{33ADDF3B-7B80-4368-847A-3B71B4342E9D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{274410E9-FF30-43BF-BF90-F8ED31AD7D36}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{274410E9-FF30-43BF-BF90-F8ED31AD7D36}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{274410E9-FF30-43BF-BF90-F8ED31AD7D36}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{274410E9-FF30-43BF-BF90-F8ED31AD7D36}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -84,6 +90,7 @@ Global
 		{3B534083-4FFC-41B0-BCD7-297B68ABDFDF} = {A3527544-323E-4CE9-AE27-7AF8B207F8E7}
 		{33ADDF3B-7B80-4368-847A-3B71B4342E9D} = {A3527544-323E-4CE9-AE27-7AF8B207F8E7}
 		{ECEECE7D-6240-4867-94D6-B9AD96C69221} = {C3FAE9AC-A15C-4EA6-B678-5309A47996A4}
+		{274410E9-FF30-43BF-BF90-F8ED31AD7D36} = {A3527544-323E-4CE9-AE27-7AF8B207F8E7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6E90C2F0-E8FE-4B4E-8644-A12F2DEAA3F5}
