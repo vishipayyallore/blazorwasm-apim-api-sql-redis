@@ -1,4 +1,4 @@
-name: Books.API
+name: Books.API .NET 5
 
 on:
   push:
