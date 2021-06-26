@@ -38,3 +38,12 @@
 
 ### Books.API .NET 6
 
+
+## Books.Web Blazor WASM
+
+
+### Books.Web .NET 5
+
+
+### Books.Web .NET 6
+
