@@ -47,3 +47,24 @@
 
 ### Books.Web .NET 6
 
+## Authentication and Authorization using Auth0
+
+### Access Token
+
+### JWT Token
+
+
+## Azure API Management
+
+
+## Azure Key Valut
+
+## Azure SQL Server
+
+## Azure Redis Cache
+
+## Application Insights
+
+## Q&A
+
+## Panel Discussion
