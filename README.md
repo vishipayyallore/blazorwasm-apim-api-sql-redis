@@ -27,8 +27,14 @@
 1. Application Insights
 
 
-## Topic 1
+## Books Data Store .sqlproj
 
 
-## Topic 2
+## Books.API
+
+
+### Books.API .NET 5
+
+
+### Books.API .NET 6
 
