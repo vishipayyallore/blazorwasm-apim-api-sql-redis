@@ -31,6 +31,7 @@
 ## Books Data Store .sqlproj
 To be done
 
+
 ## Books API
 To be done
 
@@ -40,8 +41,9 @@ To be done
 ### Books API .NET 6
 To be done
 
-## Books Web Blazor WASM
-To be done
+
+## Books Web Blazor WASM [Static Web Apps]
+Books store Blazor Web Assembly is deployed to Azure Static Web Apps.
 
 ### Books Web .NET 5
 To be done
@@ -59,23 +61,30 @@ To be done
 ### Id Token
 To be done
 
+
 ## Azure API Management
 To be done
+
 
 ## Azure Key Valut
 To be done
 
+
 ## Azure SQL Server
 To be done
+
 
 ## Azure Redis Cache
 To be done
 
+
 ## Application Insights
 To be done
 
+
 ## Q&A
 To be done
+
 
 ## Panel Discussion
 To be done
