@@ -26,45 +26,56 @@
 1. Redis
 1. Application Insights
 
+---
 
 ## Books Data Store .sqlproj
+To be done
 
+## Books API
+To be done
 
-## Books.API
+### Books API .NET 5
+To be done
 
+### Books API .NET 6
+To be done
 
-### Books.API .NET 5
+## Books Web Blazor WASM
+To be done
 
+### Books Web .NET 5
+To be done
 
-### Books.API .NET 6
+### Books Web .NET 6
+To be done
 
-
-## Books.Web Blazor WASM
-
-
-### Books.Web .NET 5
-
-
-### Books.Web .NET 6
 
 ## Authentication and Authorization using Auth0
+To be done
 
 ### Access Token
+To be done
 
-### JWT Token
-
+### Id Token
+To be done
 
 ## Azure API Management
-
+To be done
 
 ## Azure Key Valut
+To be done
 
 ## Azure SQL Server
+To be done
 
 ## Azure Redis Cache
+To be done
 
 ## Application Insights
+To be done
 
 ## Q&A
+To be done
 
 ## Panel Discussion
+To be done
