@@ -32,11 +32,14 @@ namespace Books.API.Controllers
         /// <param name="book"></param>
         /// <returns></returns>
         [HttpPost]
-        public async Task<ActionResult<bool>> Post([FromBody] Book book)
+        [ProducesResponseType(typeof(Book), (int)HttpStatusCode.Created)]
+        public async Task<ActionResult<Book>> Post([FromBody] Book book)
         {
-            return await _bookRepository
+            await _bookRepository
                             .AddBook(book)
                             .ConfigureAwait(false);
+
+            return Created("", book);
         }
 
         /// <summary>

@@ -19,7 +19,7 @@ namespace Books.API.Repositories
             _configuration = configuration ?? throw new ArgumentNullException(nameof(configuration));
         }
 
-        public async Task<bool> AddBook(Book book)
+        public async Task<Book> AddBook(Book book)
         {
             using (var conn = new SqlConnection(_configuration.SqlServerConnectionString))
             {
@@ -40,7 +40,7 @@ namespace Books.API.Repositories
                 book.Id = parameters.Get<int>("Id");
             }
 
-            return true;
+            return book;
         }
 
         public async Task<IEnumerable<Book>> GetAllBooks()

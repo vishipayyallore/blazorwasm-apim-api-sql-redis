@@ -7,7 +7,7 @@ namespace Books.API.Repositories
 
     public interface IBookRepository
     {
-        Task<bool> AddBook(Book video);
+        Task<Book> AddBook(Book video);
 
         Task<IEnumerable<Book>> GetAllBooks();
 
