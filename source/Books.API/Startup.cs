@@ -1,3 +1,5 @@
+using Books.API.CacheDal;
+using Books.API.CacheDal.Persistence;
 using Books.API.Configuration;
 using Books.API.Repositories;
 using Microsoft.AspNetCore.Builder;
@@ -6,6 +8,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
+using StackExchange.Redis;
 using System;
 using System.IO;
 
@@ -49,6 +52,16 @@ namespace Books.API
             var settingsData = new SettingsData(Configuration.GetConnectionString("SqlServerConnection"));
             services.AddSingleton(settingsData);
 
+            // Redis Cache Dependencies
+            services.AddSingleton<ConnectionMultiplexer>(sp =>
+            {
+                var configuration = ConfigurationOptions.Parse(Configuration["ConnectionStrings:CollegeRedisConnectionString"], true);
+                return ConnectionMultiplexer.Connect(configuration);
+            });
+            services.AddScoped<IRedisCacheDbContext, RedisCacheDbContext>();
+            services.AddScoped<IBookCacheRepository, BookCacheRepository>();
+
+            // SQL Server Dependencies
             services.AddScoped<IBookRepository, BookRepository>();
         }
 
