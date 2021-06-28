@@ -30,11 +30,14 @@ namespace Books.API.Repositories
                 parameters.Add("IsActive", book.IsActive, DbType.Boolean);
                 parameters.Add("ISBN", book.ISBN, DbType.String);
                 parameters.Add("Pages", book.Pages, DbType.Int32);
+                parameters.Add("Id", dbType: DbType.Int32, direction: ParameterDirection.Output);
 
                 // Stored procedure method
                 await conn.ExecuteAsync("[dbo].[usp_add_book]", parameters,
                                 commandType: CommandType.StoredProcedure)
                                 .ConfigureAwait(false);
+
+                book.Id = parameters.Get<int>("Id");
             }
 
             return true;

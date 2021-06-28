@@ -4,7 +4,8 @@
 	@Author VARCHAR(100),
 	@IsActive BIT,
 	@ISBN VARCHAR(50),
-	@Pages NUMERIC(6,0)
+	@Pages NUMERIC(6,0),
+    @Id INT OUTPUT
 
 AS
 BEGIN
@@ -16,6 +17,6 @@ BEGIN
 	VALUES
 		(@PictureUrl, @Title, @Author, @IsActive, @ISBN, @Pages);
 
-	SELECT SCOPE_IDENTITY();
+	SET @Id = SCOPE_IDENTITY() 
 
 END

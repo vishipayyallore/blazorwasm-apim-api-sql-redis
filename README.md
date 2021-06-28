@@ -88,3 +88,11 @@ To be done
 
 ## Panel Discussion
 To be done
+
+```
+1	/images/books/Book2.jpg	C#	Mithnu Nair	1	A101	101
+2	/images/books/Book10.jpg	Java	George Reddy	0	B101	202
+3	/images/books/Book5.jpg	Python	Vignesh Iyer	0	C101	303
+4	/images/books/Book8.jpg	Azure Functions	Scott Rudy	0	D102	404
+5	/images/books/Book7.jpg	Azure VMs	Mohd Azim	0	E103	505
+```
