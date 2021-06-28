@@ -1,19 +1,19 @@
-﻿using Books.API.CacheDal.Persistence;
+﻿using BooksStore.CacheDal.Interfaces;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Threading.Tasks;
 
-namespace Books.API.CacheDal
+namespace BooksStore.CacheDal
 {
 
     public class BookCacheRepository : IBookCacheRepository
     {
-        private readonly IRedisCacheDbContext _cacheDbContext;
+        private readonly IRedisCacheDbContext _redisCacheDbContext;
         private readonly ILogger<BookCacheRepository> _logger;
 
-        public BookCacheRepository(IRedisCacheDbContext cacheDbContext, ILogger<BookCacheRepository> logger)
+        public BookCacheRepository(IRedisCacheDbContext redisCacheDbContext, ILogger<BookCacheRepository> logger)
         {
-            _cacheDbContext = cacheDbContext ?? throw new ArgumentNullException(nameof(cacheDbContext));
+            _redisCacheDbContext = redisCacheDbContext ?? throw new ArgumentNullException(nameof(redisCacheDbContext));
 
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
         }
@@ -26,7 +26,7 @@ namespace Books.API.CacheDal
             {
                 _logger.Log(LogLevel.Debug, "Request Received for RedisCacheDbDal::RetrieveItemFromCache");
 
-                itemFromCache = await _cacheDbContext.RedisDatabase.StringGetAsync(itemKey);
+                itemFromCache = await _redisCacheDbContext.RedisDatabase.StringGetAsync(itemKey);
 
                 _logger.Log(LogLevel.Debug, "Returning the results from RedisCacheDbDal::RetrieveItemFromCache");
             }
@@ -47,7 +47,7 @@ namespace Books.API.CacheDal
             {
                 _logger.Log(LogLevel.Debug, "Request Received for RedisCacheDbDal::SaveOrUpdateItemToCache");
 
-                itemSavedIntoCache = await _cacheDbContext.RedisDatabase.StringSetAsync(itemKey, itemValue);
+                itemSavedIntoCache = await _redisCacheDbContext.RedisDatabase.StringSetAsync(itemKey, itemValue);
 
                 _logger.Log(LogLevel.Debug, "Returning the results from RedisCacheDbDal::SaveOrUpdateItemToCache");
             }
@@ -68,7 +68,7 @@ namespace Books.API.CacheDal
             {
                 _logger.Log(LogLevel.Debug, "Request Received for RedisCacheDbDal::DeleteItemFromCache");
 
-                itemDeletedFromCache = await _cacheDbContext.RedisDatabase.KeyDeleteAsync(itemKey);
+                itemDeletedFromCache = await _redisCacheDbContext.RedisDatabase.KeyDeleteAsync(itemKey);
 
                 _logger.Log(LogLevel.Debug, "Returning the results from RedisCacheDbDal::DeleteItemFromCache");
             }

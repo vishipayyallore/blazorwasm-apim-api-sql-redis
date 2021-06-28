@@ -1,6 +1,6 @@
-﻿using Books.API.CacheDal;
-using Books.API.Repositories;
+﻿using Books.API.Repositories;
 using Books.Data;
+using BooksStore.CacheDal.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;

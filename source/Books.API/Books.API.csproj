@@ -18,6 +18,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Books.Data\Books.Data.csproj" />
+    <ProjectReference Include="..\BooksStore.CacheDal\BooksStore.CacheDal.csproj" />
+    <ProjectReference Include="..\BooksStore.Core\BooksStore.Core.csproj" />
   </ItemGroup>
 
 </Project>

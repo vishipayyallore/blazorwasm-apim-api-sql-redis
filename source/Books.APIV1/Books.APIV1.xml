@@ -4,7 +4,7 @@
         <name>Books.APIV1</name>
     </assembly>
     <members>
-        <member name="M:Books.APIV1.Controllers.BooksController.Post(Books.DataV1.Book)">
+        <member name="M:Books.APIV1.Controllers.BooksController.Post(Books.Data.Book)">
             <summary>
             Add a Book to the Books Table
             </summary>

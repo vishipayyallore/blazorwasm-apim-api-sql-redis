@@ -1,6 +1,7 @@
-﻿using StackExchange.Redis;
+﻿using BooksStore.CacheDal.Interfaces;
+using StackExchange.Redis;
 
-namespace Books.API.CacheDal.Persistence
+namespace BooksStore.CacheDal.Persistence
 {
 
     public class RedisCacheDbContext : IRedisCacheDbContext

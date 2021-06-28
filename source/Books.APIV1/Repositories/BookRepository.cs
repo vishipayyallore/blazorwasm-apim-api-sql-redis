@@ -1,6 +1,6 @@
 ﻿using Books.APIV1.Configuration;
 using Books.APIV1.Interfaces;
-using Books.DataV1;
+using Books.Data;
 using Dapper;
 using Microsoft.Data.SqlClient;
 using System;
