@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Books.API.Repositories
+namespace BooksStore.SqlDal
 {
 
     public interface IBookRepository

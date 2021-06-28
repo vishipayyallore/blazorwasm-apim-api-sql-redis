@@ -1,6 +1,6 @@
-﻿using Books.API.Repositories;
-using Books.Data;
+﻿using Books.Data;
 using BooksStore.CacheDal.Interfaces;
+using BooksStore.SqlDal;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -61,7 +61,7 @@ namespace Books.API.Controllers
                             .GetAllBooks()
                             .ConfigureAwait(false);
 
-            await _bookCacheRepository.SaveOrUpdateItemToCache("NewBook", JsonSerializer.Serialize(books));
+            _ = await _bookCacheRepository.SaveOrUpdateItemToCache("NewBook", JsonSerializer.Serialize(books));
 
             return Ok(books);
         }

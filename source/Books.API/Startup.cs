@@ -1,8 +1,8 @@
-using Books.API.Configuration;
-using Books.API.Repositories;
 using BooksStore.CacheDal;
 using BooksStore.CacheDal.Interfaces;
 using BooksStore.CacheDal.Persistence;
+using BooksStore.Core.Configuration;
+using BooksStore.SqlDal;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;

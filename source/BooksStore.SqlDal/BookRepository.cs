@@ -1,5 +1,5 @@
-﻿using Books.API.Configuration;
-using Books.Data;
+﻿using Books.Data;
+using BooksStore.Core.Configuration;
 using Dapper;
 using Microsoft.Data.SqlClient;
 using System;
@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Threading.Tasks;
 
-namespace Books.API.Repositories
+namespace BooksStore.SqlDal
 {
 
     public class BookRepository : IBookRepository

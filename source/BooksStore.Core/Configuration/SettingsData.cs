@@ -1,4 +1,4 @@
-﻿namespace Books.API.Configuration
+﻿namespace BooksStore.Core.Configuration
 {
 
     public class SettingsData
