@@ -1,10 +1,12 @@
-﻿using Books.APIV1.Interfaces;
-using Books.Data;
+﻿using Books.Data;
+using BooksStore.CacheDal.Interfaces;
+using BooksStore.SqlDal;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Net;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace Books.APIV1.Controllers
@@ -16,11 +18,14 @@ namespace Books.APIV1.Controllers
     {
 
         private readonly IBookRepository _bookRepository;
+        private readonly IBookCacheRepository _bookCacheRepository;
         private readonly ILogger<BooksController> _logger;
 
-        public BooksController(IBookRepository bookRepository, ILogger<BooksController> logger)
+        public BooksController(IBookRepository bookRepository, IBookCacheRepository bookCacheRepository, ILogger<BooksController> logger)
         {
             _bookRepository = bookRepository ?? throw new ArgumentNullException(nameof(bookRepository));
+
+            _bookCacheRepository = bookCacheRepository ?? throw new ArgumentNullException(nameof(bookCacheRepository));
 
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
         }
@@ -31,11 +36,14 @@ namespace Books.APIV1.Controllers
         /// <param name="book"></param>
         /// <returns></returns>
         [HttpPost]
-        public async Task<ActionResult<bool>> Post([FromBody] Book book)
+        [ProducesResponseType(typeof(Book), (int)HttpStatusCode.Created)]
+        public async Task<ActionResult<Book>> Post([FromBody] Book book)
         {
-            return await _bookRepository
+            await _bookRepository
                             .AddBook(book)
                             .ConfigureAwait(false);
+
+            return Created("", book);
         }
 
         /// <summary>
@@ -51,6 +59,8 @@ namespace Books.APIV1.Controllers
             var books = await _bookRepository
                             .GetAllBooks()
                             .ConfigureAwait(false);
+
+            _ = await _bookCacheRepository.SaveOrUpdateItemToCache("NewBook", JsonSerializer.Serialize(books));
 
             return Ok(books);
         }

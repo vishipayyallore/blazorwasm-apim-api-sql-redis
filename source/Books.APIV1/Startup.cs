@@ -1,11 +1,14 @@
-using Books.APIV1.Configuration;
-using Books.APIV1.Interfaces;
-using Books.APIV1.Repositories;
+using BooksStore.CacheDal;
+using BooksStore.CacheDal.Interfaces;
+using BooksStore.CacheDal.Persistence;
+using BooksStore.Core.Configuration;
+using BooksStore.SqlDal;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
 using System;
 using System.IO;
@@ -47,11 +50,13 @@ namespace Books.APIV1
                 c.IncludeXmlComments(filePath);
             });
 
-            // Configuration["ConnectionStrings:SqlServerConnection"]
-            // SQL database connection (name defined in appsettings.json).
-            var dataStoreSettings = new DataStoreSettings(Configuration.GetConnectionString("SqlServerConnection"));
-            services.AddSingleton(dataStoreSettings);
+            services.Configure<DataStoreSettings>(Configuration.GetSection(nameof(DataStoreSettings)));
+            services.AddSingleton<IDataStoreSettings>(sp => sp.GetRequiredService<IOptions<DataStoreSettings>>().Value);
 
+            services.AddSingleton<IRedisCacheDbContext, RedisCacheDbContext>();
+            services.AddScoped<IBookCacheRepository, BookCacheRepository>();
+
+            // SQL Server Dependencies
             services.AddScoped<IBookRepository, BookRepository>();
         }
 

@@ -11,12 +11,16 @@
 
   <ItemGroup>
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
-    <PackageReference Include="Dapper" Version="2.0.78" />
-    <PackageReference Include="Microsoft.Data.SqlClient" Version="2.1.2" />
+    <PackageReference Include="Dapper" Version="2.0.90" />
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="3.0.0" />
+    <PackageReference Include="StackExchange.Redis" Version="2.2.50" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Books.Data\Books.Data.csproj" />
+    <ProjectReference Include="..\BooksStore.CacheDal\BooksStore.CacheDal.csproj" />
+    <ProjectReference Include="..\BooksStore.Core\BooksStore.Core.csproj" />
+    <ProjectReference Include="..\BooksStore.SqlDal\BooksStore.SqlDal.csproj" />
   </ItemGroup>
 
 </Project>
