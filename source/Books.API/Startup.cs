@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
 using StackExchange.Redis;
 using System;
@@ -50,16 +51,19 @@ namespace Books.API
 
             // Configuration["ConnectionStrings:SqlServerConnection"]
             // SQL database connection (name defined in appsettings.json).
-            var settingsData = new SettingsData(Configuration.GetConnectionString("SqlServerConnection"));
-            services.AddSingleton(settingsData);
+            //var settingsData = new SettingsData(Configuration.GetConnectionString("SqlServerConnection"));
+            //services.AddSingleton<IDataStoreSettings>(settingsData);
+            services.Configure<DataStoreSettings>(Configuration.GetSection(nameof(DataStoreSettings)));
+            services.AddSingleton<IDataStoreSettings>(sp => sp.GetRequiredService<IOptions<DataStoreSettings>>().Value);
 
-            // Redis Cache Dependencies
-            services.AddSingleton<ConnectionMultiplexer>(sp =>
-            {
-                var configuration = ConfigurationOptions.Parse(Configuration["ConnectionStrings:RedisConnectionString"], true);
-                return ConnectionMultiplexer.Connect(configuration);
-            });
-            services.AddScoped<IRedisCacheDbContext, RedisCacheDbContext>();
+            //// Redis Cache Dependencies
+            //services.AddSingleton<ConnectionMultiplexer>(sp =>
+            //{
+            //    var configuration = ConfigurationOptions.Parse(Configuration["ConnectionStrings:RedisConnectionString"], true);
+            //    return ConnectionMultiplexer.Connect(configuration);
+            //});
+
+            services.AddSingleton<IRedisCacheDbContext, RedisCacheDbContext>();
             services.AddScoped<IBookCacheRepository, BookCacheRepository>();
 
             // SQL Server Dependencies

@@ -12,16 +12,16 @@ namespace BooksStore.SqlDal
 
     public class BookRepository : IBookRepository
     {
-        private readonly SettingsData _configuration;
+        private readonly IDataStoreSettings _dataStoreSettings;
 
-        public BookRepository(SettingsData configuration)
+        public BookRepository(IDataStoreSettings dataStoreSettings)
         {
-            _configuration = configuration ?? throw new ArgumentNullException(nameof(configuration));
+            _dataStoreSettings = dataStoreSettings ?? throw new ArgumentNullException(nameof(dataStoreSettings));
         }
 
         public async Task<Book> AddBook(Book book)
         {
-            using (var conn = new SqlConnection(_configuration.SqlServerConnectionString))
+            using (var conn = new SqlConnection(_dataStoreSettings.SqlServerConnectionString))
             {
                 var parameters = new DynamicParameters();
                 parameters.Add("PictureUrl", book.PictureUrl, DbType.String);
@@ -47,7 +47,7 @@ namespace BooksStore.SqlDal
         {
             IEnumerable<Book> books;
 
-            using (var conn = new SqlConnection(_configuration.SqlServerConnectionString))
+            using (var conn = new SqlConnection(_dataStoreSettings.SqlServerConnectionString))
             {
                 books = await conn.QueryAsync<Book>("[dbo].[usp_get_all_books]",
                                 commandType: CommandType.StoredProcedure)
@@ -64,7 +64,7 @@ namespace BooksStore.SqlDal
             var parameters = new DynamicParameters();
             parameters.Add("Id", id, DbType.Int32);
 
-            using (var conn = new SqlConnection(_configuration.SqlServerConnectionString))
+            using (var conn = new SqlConnection(_dataStoreSettings.SqlServerConnectionString))
             {
                 video = await conn.QueryFirstOrDefaultAsync<Book>("[dbo].[usp_get_book_by_id]", parameters,
                                     commandType: CommandType.StoredProcedure)

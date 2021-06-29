@@ -1,4 +1,5 @@
 ﻿using BooksStore.CacheDal.Interfaces;
+using BooksStore.Core.Configuration;
 using StackExchange.Redis;
 
 namespace BooksStore.CacheDal.Persistence
@@ -7,9 +8,11 @@ namespace BooksStore.CacheDal.Persistence
     public class RedisCacheDbContext : IRedisCacheDbContext
     {
 
-        public RedisCacheDbContext(ConnectionMultiplexer connectionMultiplexer)
+        public RedisCacheDbContext(IDataStoreSettings dataStoreSettings)
         {
-            RedisDatabase = connectionMultiplexer.GetDatabase();
+            RedisDatabase = ConnectionMultiplexer
+                                .Connect(dataStoreSettings.RedisConnectionString)
+                                .GetDatabase();
         }
 
         public IDatabase RedisDatabase { get; }
