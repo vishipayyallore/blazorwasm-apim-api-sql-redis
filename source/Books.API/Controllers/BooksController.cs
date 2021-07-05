@@ -40,7 +40,7 @@ namespace Books.API.Controllers
         [ProducesResponseType(typeof(Book), (int)HttpStatusCode.Created)]
         public async Task<ActionResult<Book>> Post([FromBody] Book book)
         {
-            await _bookRepository
+            _ = await _bookRepository
                             .AddBook(book)
                             .ConfigureAwait(false);
 
