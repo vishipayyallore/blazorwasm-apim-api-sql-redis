@@ -66,6 +66,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "web", "web", "{2785D65B-CB0
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "database", "database", "{DF1A61BB-6EDF-4E3E-9BA2-F8B890821057}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Books.DataServices", "source\Books.DataServices\Books.DataServices.csproj", "{C3E15822-0626-4262-8EF1-396AA853DA07}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -110,6 +112,10 @@ Global
 		{1947C9EC-D552-4AEE-AB4A-5C7845739F5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1947C9EC-D552-4AEE-AB4A-5C7845739F5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1947C9EC-D552-4AEE-AB4A-5C7845739F5B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3E15822-0626-4262-8EF1-396AA853DA07}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3E15822-0626-4262-8EF1-396AA853DA07}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3E15822-0626-4262-8EF1-396AA853DA07}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3E15822-0626-4262-8EF1-396AA853DA07}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -131,6 +137,7 @@ Global
 		{C75B3EE4-4CB9-4A59-9C42-42458457C07D} = {A3527544-323E-4CE9-AE27-7AF8B207F8E7}
 		{2785D65B-CB0E-49D9-A190-F475AB51883F} = {A3527544-323E-4CE9-AE27-7AF8B207F8E7}
 		{DF1A61BB-6EDF-4E3E-9BA2-F8B890821057} = {A3527544-323E-4CE9-AE27-7AF8B207F8E7}
+		{C3E15822-0626-4262-8EF1-396AA853DA07} = {2785D65B-CB0E-49D9-A190-F475AB51883F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6E90C2F0-E8FE-4B4E-8644-A12F2DEAA3F5}
