@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Components;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Books.Web.Pages.BooksPages
+namespace Books.Web.Pages.BookPages
 {
 
     public partial class BooksList
