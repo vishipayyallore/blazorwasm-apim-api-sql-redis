@@ -1,4 +1,4 @@
-using Books.WebV1.Services;
+using Books.DataServices;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using System;
