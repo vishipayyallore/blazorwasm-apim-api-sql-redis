@@ -43,6 +43,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{C3FA
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{ECEECE7D-6240-4867-94D6-B9AD96C69221}"
 	ProjectSection(SolutionItems) = preProject
+		.github\workflows\Books.API-DotNet5-CI.yml = .github\workflows\Books.API-DotNet5-CI.yml
+		.github\workflows\Books.API-DotNet6-CI.yml = .github\workflows\Books.API-DotNet6-CI.yml
+		.github\workflows\Books.Web-DotNet5-CI.yml = .github\workflows\Books.Web-DotNet5-CI.yml
+		.github\workflows\Books.Web-DotNet6-CI.yml = .github\workflows\Books.Web-DotNet6-CI.yml
 		.github\workflows\BooksDataStore-CI.yml = .github\workflows\BooksDataStore-CI.yml
 	EndProjectSection
 EndProject
