@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Books.WebV1.Pages.BookPages
+namespace Books.Web.Pages.BookPages
 {
-    public partial class EditBook
+    
+    public partial class Delete
     {
     }
+
 }

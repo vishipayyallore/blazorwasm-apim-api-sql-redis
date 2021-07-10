@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Books.WebV1.Pages.BookPages
 {
-    public partial class DeleteBook
+    public partial class Edit
     {
     }
 }

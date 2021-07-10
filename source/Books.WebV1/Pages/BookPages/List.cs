@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Books.WebV1.Pages.BookPages
 {
 
-    public partial class BooksList
+    public partial class List
     {
         [Inject]
         private IBookDataService BookDataService { get; set; }

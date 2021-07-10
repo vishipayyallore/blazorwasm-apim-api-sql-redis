@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Books.Web.Pages.BookPages
 {
 
-    public partial class AddBook
+    public partial class Add
     {
         [Inject]
         private IBookDataService BookDataService { get; set; }
@@ -25,12 +25,12 @@ namespace Books.Web.Pages.BookPages
 
             await BookDataService.AddBook(NewBook);
 
-            NavigationManager.NavigateTo("bookslist");
+            NavigationManager.NavigateTo("listbooks");
         }
 
         protected void Home()
         {
-            NavigationManager.NavigateTo("bookslist");
+            NavigationManager.NavigateTo("listbooks");
         }
 
     }

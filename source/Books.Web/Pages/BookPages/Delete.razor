@@ -1,8 +1,8 @@
-﻿@page "/editbook/{id:int}"
+﻿@page "/deletebook/{id:int}"
 
 @inject NavigationManager NavigationManager
 
-<h3>EditBook</h3>
+<h3>DeleteBook</h3>
 
 <button class="btn btn-info mt-2" @onclick="Cancel" title="Cancel">
     <span class="oi oi-home" aria-hidden="true"></span>
@@ -14,6 +14,6 @@
 
     void Cancel()
     {
-        NavigationManager.NavigateTo("/bookslist");
+        NavigationManager.NavigateTo("/listbooks");
     }
 }
