@@ -1,4 +1,4 @@
-# N-Tier Full Stack Application in Azure
+# Cloud Native Full Stack Application in Azure
 
 ## Continous Integration Builds
 
