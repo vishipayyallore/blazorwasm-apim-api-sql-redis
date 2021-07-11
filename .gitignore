@@ -370,3 +370,4 @@ source/Books.WebV1/wwwroot/images/books/Book7.jpg
 source/Books.WebV1/wwwroot/images/books/Book8.jpg
 source/Books.WebV1/wwwroot/images/books/Book9.jpg
 /source/Books.API/Properties/ServiceDependencies/app-booksstoreapi - Web Deploy/profile.arm.json
+/source/Books.Web/Properties/ServiceDependencies/app-booksstoreweb - Web Deploy/profile.arm.json
