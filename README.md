@@ -42,8 +42,8 @@ To be done
 To be done
 
 
-## Books Web Blazor WASM [Static Web Apps]
-Books store Blazor Web Assembly is deployed to Azure Static Web Apps.
+## Books Web Blazor WASM
+Books store Blazor Web Assembly is deployed to Azure App Service Web Apps.
 
 ### Books Web .NET 5
 To be done
