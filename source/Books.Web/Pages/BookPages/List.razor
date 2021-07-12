@@ -1,5 +1,7 @@
 ﻿@page "/listbooks"
 
+@attribute [Authorize]  
+
 @if (Books == null)
 {
 	<p style="text-align:center">

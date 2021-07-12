@@ -1,5 +1,7 @@
 ﻿@page "/fetchdata"
 
+@attribute [Authorize]  
+
 @if (forecasts == null)
 {
 	<p><em>Loading...</em></p>
