@@ -3,6 +3,7 @@ using BooksStore.Core.Configuration;
 using BooksStore.Core.Interfaces;
 using Dapper;
 using Microsoft.Data.SqlClient;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -14,14 +15,19 @@ namespace BooksStore.SqlDal
     public class BookRepository : IBookRepository
     {
         private readonly IDataStoreSettings _dataStoreSettings;
+        private readonly ILogger<BookRepository> _logger;
 
-        public BookRepository(IDataStoreSettings dataStoreSettings)
+        public BookRepository(IDataStoreSettings dataStoreSettings, ILogger<BookRepository> logger)
         {
             _dataStoreSettings = dataStoreSettings ?? throw new ArgumentNullException(nameof(dataStoreSettings));
+            
+            _logger = logger ?? throw new ArgumentNullException(nameof(logger));
         }
 
         public async Task<Book> AddBook(Book book)
         {
+            _logger.LogInformation("Request Received for BookRepository::AddBook()");
+
             using (var conn = new SqlConnection(_dataStoreSettings.SqlServerConnectionString))
             {
                 var parameters = new DynamicParameters();
@@ -41,11 +47,15 @@ namespace BooksStore.SqlDal
                 book.Id = parameters.Get<int>("Id");
             }
 
+            _logger.LogInformation("Returning output from BookRepository::AddBook()");
+
             return book;
         }
 
         public async Task<IEnumerable<Book>> GetAllBooks()
         {
+            _logger.LogInformation("Request Received for BookRepository::GetAllBooks()");
+            
             IEnumerable<Book> books;
 
             using (var conn = new SqlConnection(_dataStoreSettings.SqlServerConnectionString))
@@ -55,24 +65,30 @@ namespace BooksStore.SqlDal
                                 .ConfigureAwait(false);
             }
 
+            _logger.LogInformation("Returning output from BookRepository::GetAllBooks()");
+
             return books;
         }
 
         public async Task<Book> GetBookById(int id)
         {
-            Book video = new();
+            _logger.LogInformation("Request Received for BookRepository::GetBookById()");
+
+            Book book = new();
 
             var parameters = new DynamicParameters();
             parameters.Add("Id", id, DbType.Int32);
 
             using (var conn = new SqlConnection(_dataStoreSettings.SqlServerConnectionString))
             {
-                video = await conn.QueryFirstOrDefaultAsync<Book>("[dbo].[usp_get_book_by_id]", parameters,
+                book = await conn.QueryFirstOrDefaultAsync<Book>("[dbo].[usp_get_book_by_id]", parameters,
                                     commandType: CommandType.StoredProcedure)
                                     .ConfigureAwait(false);
             }
 
-            return video;
+            _logger.LogInformation("Returning output from BookRepository::GetBookById()");
+
+            return book;
         }
 
     }

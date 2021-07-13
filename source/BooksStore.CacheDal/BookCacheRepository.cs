@@ -24,16 +24,16 @@ namespace BooksStore.CacheDal
 
             try
             {
-                _logger.Log(LogLevel.Debug, "Request Received for RedisCacheDbDal::RetrieveItemFromCache");
+                _logger.LogInformation("Request Received for RedisCacheDbDal::RetrieveItemFromCache");
 
                 itemFromCache = await _redisCacheDbContext.RedisDatabase.StringGetAsync(itemKey);
 
-                _logger.Log(LogLevel.Debug, "Returning the results from RedisCacheDbDal::RetrieveItemFromCache");
+                _logger.LogInformation("Returning the results from RedisCacheDbDal::RetrieveItemFromCache");
             }
             catch (Exception error)
             {
                 // ToDo: Log into File.
-                _logger.Log(LogLevel.Error, $"Error occurred at RedisCacheDbDal::RetrieveItemFromCache(). Message: {error.Message}");
+                _logger.LogError($"Error occurred at RedisCacheDbDal::RetrieveItemFromCache(). Message: {error.Message}");
             }
 
             return itemFromCache;
@@ -45,16 +45,16 @@ namespace BooksStore.CacheDal
 
             try
             {
-                _logger.Log(LogLevel.Debug, "Request Received for RedisCacheDbDal::SaveOrUpdateItemToCache");
+                _logger.LogInformation("Request Received for RedisCacheDbDal::SaveOrUpdateItemToCache");
 
                 itemSavedIntoCache = await _redisCacheDbContext.RedisDatabase.StringSetAsync(itemKey, itemValue);
 
-                _logger.Log(LogLevel.Debug, "Returning the results from RedisCacheDbDal::SaveOrUpdateItemToCache");
+                _logger.LogInformation("Returning the results from RedisCacheDbDal::SaveOrUpdateItemToCache");
             }
             catch (Exception error)
             {
                 // ToDo: Log into File.
-                _logger.Log(LogLevel.Error, $"Error occurred at RedisCacheDbDal::SaveItemToCache(). Message: {error.Message}");
+                _logger.LogError($"Error occurred at RedisCacheDbDal::SaveItemToCache(). Message: {error.Message}");
             }
 
             return itemSavedIntoCache;
@@ -66,16 +66,16 @@ namespace BooksStore.CacheDal
 
             try
             {
-                _logger.Log(LogLevel.Debug, "Request Received for RedisCacheDbDal::DeleteItemFromCache");
+                _logger.LogInformation("Request Received for RedisCacheDbDal::DeleteItemFromCache");
 
                 itemDeletedFromCache = await _redisCacheDbContext.RedisDatabase.KeyDeleteAsync(itemKey);
 
-                _logger.Log(LogLevel.Debug, "Returning the results from RedisCacheDbDal::DeleteItemFromCache");
+                _logger.LogInformation("Returning the results from RedisCacheDbDal::DeleteItemFromCache");
             }
             catch (Exception error)
             {
                 // ToDo: Log into File.
-                _logger.Log(LogLevel.Error, $"Error occurred at RedisCacheDbDal::DeleteItemFromCache(). Message: {error.Message}");
+                _logger.LogError($"Error occurred at RedisCacheDbDal::DeleteItemFromCache(). Message: {error.Message}");
             }
 
             return itemDeletedFromCache;
