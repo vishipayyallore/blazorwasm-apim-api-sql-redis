@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace BooksStore.SqlDal
+namespace BooksStore.Core.Interfaces
 {
 
     public interface IBookRepository
@@ -12,10 +12,6 @@ namespace BooksStore.SqlDal
         Task<IEnumerable<Book>> GetAllBooks();
 
         Task<Book> GetBookById(int id);
-
-        //Task<bool> UpdateBook(Book video);
-
-        //Task<bool> DeleteBook(int id);
     }
 
 }

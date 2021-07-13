@@ -1,6 +1,6 @@
 ﻿using Books.Data;
 using BooksStore.CacheDal.Interfaces;
-using BooksStore.SqlDal;
+using BooksStore.Core.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;

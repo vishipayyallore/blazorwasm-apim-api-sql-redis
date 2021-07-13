@@ -2,6 +2,7 @@ using BooksStore.CacheDal;
 using BooksStore.CacheDal.Interfaces;
 using BooksStore.CacheDal.Persistence;
 using BooksStore.Core.Configuration;
+using BooksStore.Core.Interfaces;
 using BooksStore.SqlDal;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;

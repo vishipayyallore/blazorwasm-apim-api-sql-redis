@@ -1,5 +1,6 @@
 ﻿using Books.Data;
 using BooksStore.Core.Configuration;
+using BooksStore.Core.Interfaces;
 using Dapper;
 using Microsoft.Data.SqlClient;
 using System;
