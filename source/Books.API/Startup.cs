@@ -1,6 +1,5 @@
 using BooksStore.Bll;
 using BooksStore.CacheDal;
-using BooksStore.CacheDal.Interfaces;
 using BooksStore.CacheDal.Persistence;
 using BooksStore.Core.Configuration;
 using BooksStore.Core.Interfaces;

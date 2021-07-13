@@ -1,4 +1,4 @@
-﻿using BooksStore.CacheDal.Interfaces;
+﻿using BooksStore.Core.Interfaces;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Threading.Tasks;

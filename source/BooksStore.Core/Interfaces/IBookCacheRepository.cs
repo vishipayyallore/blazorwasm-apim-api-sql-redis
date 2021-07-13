@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace BooksStore.CacheDal.Interfaces
+namespace BooksStore.Core.Interfaces
 {
 
     public interface IBookCacheRepository

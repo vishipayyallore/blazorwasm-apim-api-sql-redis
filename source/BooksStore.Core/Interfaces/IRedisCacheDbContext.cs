@@ -1,6 +1,6 @@
 ﻿using StackExchange.Redis;
 
-namespace BooksStore.CacheDal.Interfaces
+namespace BooksStore.Core.Interfaces
 {
 
     public interface IRedisCacheDbContext

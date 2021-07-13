@@ -1,5 +1,5 @@
-﻿using BooksStore.CacheDal.Interfaces;
-using BooksStore.Core.Configuration;
+﻿using BooksStore.Core.Configuration;
+using BooksStore.Core.Interfaces;
 using StackExchange.Redis;
 
 namespace BooksStore.CacheDal.Persistence
