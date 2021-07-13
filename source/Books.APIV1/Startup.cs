@@ -1,7 +1,9 @@
+using BooksStore.Bll;
 using BooksStore.CacheDal;
 using BooksStore.CacheDal.Interfaces;
 using BooksStore.CacheDal.Persistence;
 using BooksStore.Core.Configuration;
+using BooksStore.Core.Interfaces;
 using BooksStore.SqlDal;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -28,7 +30,6 @@ namespace Books.APIV1
             Configuration = configuration;
         }
 
-
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
@@ -54,9 +55,9 @@ namespace Books.APIV1
             services.AddSingleton<IDataStoreSettings>(sp => sp.GetRequiredService<IOptions<DataStoreSettings>>().Value);
 
             services.AddSingleton<IRedisCacheDbContext, RedisCacheDbContext>();
+            services.AddScoped<IBooksBll, BooksBll>();
             services.AddScoped<IBookCacheRepository, BookCacheRepository>();
 
-            // SQL Server Dependencies
             services.AddScoped<IBookRepository, BookRepository>();
         }
 
