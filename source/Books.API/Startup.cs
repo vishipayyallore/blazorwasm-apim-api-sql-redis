@@ -1,3 +1,4 @@
+using BooksStore.Bll;
 using BooksStore.CacheDal;
 using BooksStore.CacheDal.Interfaces;
 using BooksStore.CacheDal.Persistence;
@@ -53,6 +54,7 @@ namespace Books.API
             services.AddSingleton<IDataStoreSettings>(sp => sp.GetRequiredService<IOptions<DataStoreSettings>>().Value);
 
             services.AddSingleton<IRedisCacheDbContext, RedisCacheDbContext>();
+            services.AddScoped<IBooksBll, BooksBll>();
             services.AddScoped<IBookCacheRepository, BookCacheRepository>();
 
             services.AddScoped<IBookRepository, BookRepository>();

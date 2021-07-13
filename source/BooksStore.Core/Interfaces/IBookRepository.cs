@@ -7,7 +7,7 @@ namespace BooksStore.Core.Interfaces
 
     public interface IBookRepository
     {
-        Task<Book> AddBook(Book video);
+        Task<Book> AddBook(Book book);
 
         Task<IEnumerable<Book>> GetAllBooks();
 

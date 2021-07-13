@@ -13,7 +13,7 @@
 
         public static class RedisCacheStore
         {
-            public static string AllBooksKey { get; } = "books_all_";
+            public static string AllBooksKey { get; } = "all_books";
 
             public static string SingleBookKey { get; } = "book_";
         }

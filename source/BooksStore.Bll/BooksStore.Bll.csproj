@@ -4,4 +4,11 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Books.Data\Books.Data.csproj" />
+    <ProjectReference Include="..\BooksStore.CacheDal\BooksStore.CacheDal.csproj" />
+    <ProjectReference Include="..\BooksStore.Core\BooksStore.Core.csproj" />
+    <ProjectReference Include="..\BooksStore.SqlDal\BooksStore.SqlDal.csproj" />
+  </ItemGroup>
+
 </Project>
