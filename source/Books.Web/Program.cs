@@ -25,22 +25,26 @@ namespace Books.Web
             });
 
             builder.Services.AddHttpClient<IBookDataService, BookDataService>(client =>
-                client.BaseAddress = new Uri(builder.Configuration["WebApis:Books"]))
-                .AddHttpMessageHandler(sp =>
-                    {
-                        var provider = sp.GetRequiredService<IAccessTokenProvider>();
-                        var naviManager = sp.GetRequiredService<NavigationManager>();
+                {
+                    client.BaseAddress = new Uri(builder.Configuration["WebApis:Books"]);
+                    client.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", builder.Configuration["WebApis:ApimSubscriptionKey"]);
+                }
+            )
+            .AddHttpMessageHandler(sp =>
+                {
+                    var provider = sp.GetRequiredService<IAccessTokenProvider>();
+                    var naviManager = sp.GetRequiredService<NavigationManager>();
 
-                        var handler = new AuthorizationMessageHandler(provider, naviManager);
-                        handler.ConfigureHandler(authorizedUrls: new[]
-                            {
-                                builder.Configuration["WebApis:Books"]
-                            }
-                        );
+                    var handler = new AuthorizationMessageHandler(provider, naviManager);
+                    handler.ConfigureHandler(authorizedUrls: new[]
+                        {
+                            builder.Configuration["WebApis:Books"]
+                        }
+                    );
 
-                        return handler;
-                    }
-                );
+                    return handler;
+                }
+            );
 
             await builder.Build().RunAsync();
         }
