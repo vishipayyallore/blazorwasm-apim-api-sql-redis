@@ -4,6 +4,7 @@ using BooksStore.CacheDal.Persistence;
 using BooksStore.Core.Configuration;
 using BooksStore.Core.Interfaces;
 using BooksStore.SqlDal;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -32,6 +33,14 @@ namespace Books.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services
+                .AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+                .AddJwtBearer(options =>
+                {
+                    options.Authority = Configuration["Auth0:Authority"];
+                    options.Audience = Configuration["Auth0:Audience"];
+                });
+
             services.AddCors(options =>
             {
                 options.AddPolicy(_corsPolicyName, builder => builder.AllowAnyOrigin()
@@ -75,6 +84,8 @@ namespace Books.API
             app.UseRouting();
 
             app.UseCors(_corsPolicyName);
+
+            app.UseAuthentication();
 
             app.UseAuthorization();
 
