@@ -46,6 +46,8 @@ namespace Books.Web
                 }
             );
 
+            builder.Services.AddApplicationInsightsTelemetry(builder.Configuration["APPINSIGHTS_CONNECTIONSTRING"]);
+
             await builder.Build().RunAsync();
         }
     }
