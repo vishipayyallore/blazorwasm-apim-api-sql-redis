@@ -372,3 +372,7 @@ source/Books.WebV1/wwwroot/images/books/Book9.jpg
 /source/Books.API/Properties/ServiceDependencies/app-booksstoreapi - Web Deploy/profile.arm.json
 /source/Books.Web/Properties/ServiceDependencies/app-booksstoreweb - Web Deploy/profile.arm.json
 /source/Books.API/Properties/ServiceDependencies/local/appInsights1.arm.json
+source/Books.API/Properties/serviceDependencies.app-booksstoreapi-prod - Web Deploy.json
+source/Books.API/Properties/ServiceDependencies/app-booksstoreapi-prod - Web Deploy/appInsights1.arm.json
+source/Books.API/Properties/ServiceDependencies/app-booksstoreapi-prod - Web Deploy/profile.arm.json
+source/Books.Web/Properties/ServiceDependencies/app-booksstoreweb-prod - Web Deploy/profile.arm.json
