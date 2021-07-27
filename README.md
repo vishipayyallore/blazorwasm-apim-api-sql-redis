@@ -8,7 +8,7 @@
 | Web API   .NET 6     |  [![Books.API .NET 6](https://github.com/vishipayyallore/blazorwasm-apim-api-sql-redis/actions/workflows/Books.API-DotNet6-CI.yml/badge.svg)](https://github.com/vishipayyallore/blazorwasm-apim-api-sql-redis/actions/workflows/Books.API-DotNet6-CI.yml)     |  Web App  .NET 6    |   [![Books.Web .NET 6](https://github.com/vishipayyallore/blazorwasm-apim-api-sql-redis/actions/workflows/Books.Web-DotNet6-CI.yml/badge.svg)](https://github.com/vishipayyallore/blazorwasm-apim-api-sql-redis/actions/workflows/Books.Web-DotNet6-CI.yml)    |  Data Store        |  Same as above     | 
 |         |       |         |       |          |       | 
 
-## Application Architecture Diagram
+## Application Architecture Diagram 
 
 ![Application Architecture](./documentation/images/ApplicationArchitecture.PNG "N-Tier Full Stack Application in Azure")
 
