@@ -27,7 +27,7 @@ namespace Books.Web
             builder.Services.AddHttpClient<IBookDataService, BookDataService>(client =>
                 {
                     client.BaseAddress = new Uri(builder.Configuration["WebApis:Books"]);
-                    // client.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", builder.Configuration["WebApis:ApimSubscriptionKey"]);
+                    client.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", builder.Configuration["WebApis:ApimSubscriptionKey"]);
                 }
             )
             .AddHttpMessageHandler(sp =>
