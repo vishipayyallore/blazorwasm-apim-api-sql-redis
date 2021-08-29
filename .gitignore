@@ -378,3 +378,5 @@ source/Books.API/Properties/ServiceDependencies/app-booksstoreapi-prod - Web Dep
 source/Books.Web/Properties/ServiceDependencies/app-booksstoreweb-prod - Web Deploy/profile.arm.json
 source/Books.API/Properties/ServiceDependencies/app-booksstoreapi-1308 - Web Deploy/profile.arm.json
 source/Books.Web/Properties/ServiceDependencies/app-booksstoreweb-1308 - Web Deploy/profile.arm.json
+source/Books.API/Properties/ServiceDependencies/app-booksstoreapi-dev - Web Deploy/profile.arm.json
+source/Books.Web/Properties/ServiceDependencies/app-booksstoreweb-dev - Web Deploy/profile.arm.json
