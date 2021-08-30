@@ -1,0 +1,41 @@
+name: Books.API .NET 5
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Build and Test Books API
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: 5.0.x
+
+      - name: Restore dependencies
+        run: dotnet restore
+        working-directory: ./source/Books.API
+
+      - name: Build
+        run: dotnet build --no-restore
+        working-directory: ./source/Books.API
+
+      - name: Test
+        run: dotnet test --no-build --verbosity normal
+        working-directory: ./source/Books.API
+
+      - name: dotnet publish
+        run: dotnet publish -c Release -o ./publish
+        working-directory: ./source/Books.API
+
+      # Upload an artifact to drop location
+      - uses: actions/upload-artifact@v2
+        with:
+          name: Books.API
+          path: ${{ github.workspace }}/source/Books.API/publish/
