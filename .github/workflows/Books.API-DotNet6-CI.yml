@@ -1,0 +1,42 @@
+name: Books.API .NET 6
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Build and Test Books API
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: 6.0.x
+          include-prerelease: true
+
+      - name: Restore dependencies
+        run: dotnet restore
+        working-directory: ./source/Books.APIV1
+
+      - name: Build
+        run: dotnet build --no-restore
+        working-directory: ./source/Books.APIV1
+
+      - name: Test
+        run: dotnet test --no-build --verbosity normal
+        working-directory: ./source/Books.APIV1
+
+      - name: dotnet publish
+        run: dotnet publish -c Release -o ./publish
+        working-directory: ./source/Books.APIV1
+
+      # Upload an artifact to drop location
+      - uses: actions/upload-artifact@v2
+        with:
+          name: Books.APIV1
+          path: ${{ github.workspace }}/source/Books.APIV1/publish/
